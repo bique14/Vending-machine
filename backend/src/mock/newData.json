@@ -1,0 +1,11 @@
+{
+  "location": "siam",
+  "id": "coca-cola-coke",
+  "name": "Coke",
+  "image": "https://backend.tops.co.th/media//catalog/product/8/8/8851959132012.jpg",
+  "price": "15",
+  "quantity": {
+    "remaining": 100,
+    "total": 100
+  }
+}
