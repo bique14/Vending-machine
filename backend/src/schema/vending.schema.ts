@@ -6,8 +6,6 @@ export const VendingSchema = new mongoose.Schema({
   name: String,
   image: String,
   price: String,
-  quantity: {
-    remaining: Number,
-    total: Number,
-  },
+  remaining: Number,
+  total: Number,
 });
