@@ -13,9 +13,19 @@ export class VendingController {
 
   @Put()
   createVending(@Body() vending: Vending) {
+    // for mock data only
     return this.vendingService.create(vending);
   }
 
-  @Put()
-  purchase(@Body() body: any) {}
+  @Get('vending')
+  getProduct(@Query() query) {
+    const { id } = query;
+    return this.vendingService.findById(id);
+  }
+
+  @Put('vending')
+  purchase(@Body() body: { id: string; quantity: number }) {
+    const { id, quantity } = body;
+    return this.vendingService.purchase(id, quantity);
+  }
 }
