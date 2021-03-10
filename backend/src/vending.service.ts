@@ -1,21 +1,23 @@
 import { Injectable } from '@nestjs/common';
-
-const vendingData = require('./mock/data.json');
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Vending } from './vending.interface';
+import { VendingDto } from './vending.dto';
 
 @Injectable()
 export class VendingService {
-  getAllData(): any {
-    return vendingData;
+  constructor(
+    @InjectModel('vendings') private readonly vendingModel: Model<any>,
+  ) {}
+
+  async findAll() {
+    return await this.vendingModel.find({}).sort({ score: 'desc' }).exec();
   }
 
-  getByLocation(locationId): any[] {
-    const { location } = vendingData;
-    const filtered = filterByLocation(location, locationId);
-    const result = filtered.length ? filtered : 'Location not found';
-
-    return result;
+  async create(vending: VendingDto): Promise<any> {
+    const createdVideo = new this.vendingModel(vending);
+    console.log(createdVideo);
+    console.log('created!');
+    return await createdVideo.save();
   }
 }
-
-const filterByLocation = (locations, locationId) =>
-  locations.filter((l) => l.id == locationId);
