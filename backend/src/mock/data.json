@@ -1,0 +1,54 @@
+{
+  "location": [
+    {
+      "id": "siam",
+      "products": [
+        {
+          "id": "coca-cola-coke",
+          "name": "Coke",
+          "image": "https://backend.tops.co.th/media//catalog/product/8/8/8851959132012.jpg",
+          "price": "15",
+          "quantity": {
+            "remaining": 100,
+            "total": 100
+          }
+        },
+        {
+          "id": "coca-cola-coke-light",
+          "name": "Coke Light",
+          "image": "https://backend.tops.co.th/media/catalog/product/8/8/8851959132050_1.jpg",
+          "price": "15",
+          "quantity": {
+            "remaining": 100,
+            "total": 100
+          }
+        }
+      ]
+    },
+    {
+      "id": "petchaburi",
+      "products": [
+        {
+          "id": "fanta-orange",
+          "name": "Fanta Orange",
+          "image": "https://assets.lyreco.com/is/image/lyrecows/2018-10022253?locale=TH_th&id=lpFqo0&fmt=jpg&fit=constrain,1&wid=430&hei=430",
+          "price": "12",
+          "quantity": {
+            "remaining": 100,
+            "total": 100
+          }
+        },
+        {
+          "id": "sprite",
+          "name": "Sprite",
+          "image": "https://backend.tops.co.th/media/catalog/product/8/8/8851959132364_e02-04-2019.jpg",
+          "price": "15",
+          "quantity": {
+            "remaining": 100,
+            "total": 100
+          }
+        }
+      ]
+    }
+  ]
+}
