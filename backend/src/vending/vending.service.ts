@@ -7,17 +7,16 @@ import { VendingDto } from './vending.dto';
 @Injectable()
 export class VendingService {
   constructor(
-    @InjectModel('vendings') private readonly vendingModel: Model<any>,
+    @InjectModel('vendings') private readonly vendingModel: Model<Vending>,
   ) {}
 
   async findAll() {
     return await this.vendingModel.find({}).sort({ score: 'desc' }).exec();
   }
 
-  async create(vending: VendingDto): Promise<any> {
-    const createdVideo = new this.vendingModel(vending);
-    console.log(createdVideo);
-    console.log('created!');
-    return await createdVideo.save();
+  async create(vending: VendingDto): Promise<Vending> {
+    const craeteVending = new this.vendingModel(vending);
+    console.log('created!', craeteVending);
+    return await craeteVending.save();
   }
 }
