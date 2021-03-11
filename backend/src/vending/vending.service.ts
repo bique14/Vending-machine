@@ -42,6 +42,23 @@ export class VendingService {
     return await craeteVending.save();
   }
 
+  async addOne(productId) {
+    const product = await this.vendingModel.find({ _id: productId }).exec();
+    return await this.vendingModel
+      .updateOne(
+        { _id: productId },
+        { remaining: product[0].remaining + 1 },
+        { upsert: true },
+      )
+      .exec();
+  }
+
+  async restock(productId) {
+    return await this.vendingModel
+      .updateOne({ _id: productId }, { remaining: 100 }, { upsert: true })
+      .exec();
+  }
+
   async purchase(productId, quantity) {
     console.log('ID', productId);
     const product = await this.vendingModel.find({ _id: productId }).exec();

@@ -11,10 +11,22 @@ export class VendingController {
     return await this.vendingService.findAll();
   }
 
-  @Put('vending/create')
+  @Put('admin/create')
   createVending(@Body() vending: Vending) {
     // for mock data only
     return this.vendingService.create(vending);
+  }
+
+  @Put('admin/product/add')
+  addOne(@Body() body: { id: string }) {
+    const { id } = body;
+    return this.vendingService.addOne(id);
+  }
+
+  @Put('admin/product/restock')
+  restock(@Body() body: { id: string }) {
+    const { id } = body;
+    return this.vendingService.restock(id);
   }
 
   @Get('vending')
