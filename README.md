@@ -20,6 +20,10 @@ Database: MongoDB
 
 ## Development steps
 
+#### Prerequisite
+
+- Start database [MongoDB](https://www.mongodb.com/3)
+
 #### One line installation
 
 For install frontend and backend packages
