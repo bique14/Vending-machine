@@ -19,7 +19,21 @@ export class VendingService {
   }
 
   async findByLocation(locationId): Promise<Vending[]> {
-    return await this.vendingModel.find({ location: locationId }).exec();
+    const products = await this.vendingModel
+      .find({ location: locationId })
+      .exec();
+
+    if (products.length > 0) {
+      return products;
+    } else {
+      throw new HttpException(
+        {
+          status: HttpStatus.NOT_FOUND,
+          error: 'Not found',
+        },
+        HttpStatus.NOT_FOUND,
+      );
+    }
   }
 
   async create(vending: VendingDto): Promise<Vending> {
@@ -29,7 +43,9 @@ export class VendingService {
   }
 
   async purchase(productId, quantity) {
+    console.log('ID', productId);
     const product = await this.vendingModel.find({ _id: productId }).exec();
+    console.log(product);
     const { remaining } = product[0];
 
     if (remaining > 0) {

@@ -11,7 +11,7 @@ export class VendingController {
     return await this.vendingService.findAll();
   }
 
-  @Put()
+  @Put('vending/create')
   createVending(@Body() vending: Vending) {
     // for mock data only
     return this.vendingService.create(vending);
@@ -23,15 +23,16 @@ export class VendingController {
     return this.vendingService.findById(id);
   }
 
-  @Get('vending')
+  @Get('vending/location')
   getProductByLocation(@Query() query): Promise<Vending[]> {
-    const { location } = query;
-    return this.vendingService.findByLocation(location);
+    const { id } = query;
+    return this.vendingService.findByLocation(id);
   }
 
-  @Put('vending')
+  @Put('vending/purchase')
   purchase(@Body() body: { id: string; quantity: number }) {
     const { id, quantity } = body;
+    console.log('BODY', body);
     return this.vendingService.purchase(id, quantity);
   }
 }

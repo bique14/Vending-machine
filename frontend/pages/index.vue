@@ -6,6 +6,7 @@
     <button class="border bg-red-200 p-4" @click="increaseCount()">+</button>
   </div>
 </template>
+
 <script>
 export default {
   data() {
