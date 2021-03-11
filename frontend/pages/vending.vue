@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <div class="bg-yellow-200">
+    <div class="bg-yellow-200 w-1/2 mx-auto mt-6">
       <h1 class="font-bold text-2xl text-center py-4">Vending Machine</h1>
     </div>
     <div class="mt-4">
@@ -66,7 +66,7 @@
               </div>
             </li>
           </div>
-          <div class="bg-blue-200 w-60 flex flex-col justify-between p-4">
+          <div class="bg-blue-200 w-60 flex flex-col justify-between p-4 ml-2">
             <div>
               <div>
                 <h1
@@ -123,7 +123,7 @@ export default {
     title: "Vending Machine 🥤",
   },
   data() {
-    return { location: "", coin: 15, products: [] };
+    return { location: "", coin: 0, products: [] };
   },
   async mounted() {
     const { location } = this.$route.query;

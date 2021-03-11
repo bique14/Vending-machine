@@ -1,54 +1,90 @@
-{
-  "location": [
-    {
-      "id": "siam",
-      "products": [
-        {
-          "id": "coca-cola-coke",
-          "name": "Coke",
-          "image": "https://backend.tops.co.th/media//catalog/product/8/8/8851959132012.jpg",
-          "price": "15",
-          "quantity": {
-            "remaining": 100,
-            "total": 100
-          }
-        },
-        {
-          "id": "coca-cola-coke-light",
-          "name": "Coke Light",
-          "image": "https://backend.tops.co.th/media/catalog/product/8/8/8851959132050_1.jpg",
-          "price": "15",
-          "quantity": {
-            "remaining": 100,
-            "total": 100
-          }
-        }
-      ]
-    },
-    {
-      "id": "petchaburi",
-      "products": [
-        {
-          "id": "fanta-orange",
-          "name": "Fanta Orange",
-          "image": "https://assets.lyreco.com/is/image/lyrecows/2018-10022253?locale=TH_th&id=lpFqo0&fmt=jpg&fit=constrain,1&wid=430&hei=430",
-          "price": "12",
-          "quantity": {
-            "remaining": 100,
-            "total": 100
-          }
-        },
-        {
-          "id": "sprite",
-          "name": "Sprite",
-          "image": "https://backend.tops.co.th/media/catalog/product/8/8/8851959132364_e02-04-2019.jpg",
-          "price": "15",
-          "quantity": {
-            "remaining": 100,
-            "total": 100
-          }
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "_id": "604a0a5735475523317ec774",
+    "location": "siam",
+    "id": "coca-cola-coke",
+    "name": "Coke",
+    "image": "https://backend.tops.co.th/media//catalog/product/8/8/8851959132012.jpg",
+    "price": "15",
+    "remaining": 100,
+    "total": 100,
+    "__v": 0
+  },
+  {
+    "_id": "604a0d0c6a1791319e8d8c52",
+    "location": "siam",
+    "id": "sprite-siam",
+    "name": "Sprite",
+    "image": "https://backend.tops.co.th/media/catalog/product/8/8/8851959132364_e02-04-2019.jpg",
+    "price": "15",
+    "remaining": 100,
+    "total": 100,
+    "__v": 0
+  },
+  {
+    "_id": "604a0d2e6a1791319e8d8c53",
+    "location": "supan",
+    "id": "fanta-supan",
+    "name": "Fanta Orange",
+    "image": "https://assets.lyreco.com/is/image/lyrecows/2018-10022253?locale=TH_th&id=lpFqo0&fmt=jpg&fit=constrain,1&wid=430&hei=430",
+    "price": "15",
+    "remaining": 100,
+    "total": 100,
+    "__v": 0
+  },
+  {
+    "_id": "604a118152b70c3225c0141d",
+    "location": "siam",
+    "id": "oishi-green-siam",
+    "name": "Oishi Green tea",
+    "image": "https://backend.tops.co.th/media//catalog/product/8/8/8854698009737_1.jpg",
+    "price": "20",
+    "remaining": 9,
+    "total": 100,
+    "__v": 0
+  },
+  {
+    "_id": "604a119152b70c3225c0141e",
+    "location": "siam",
+    "id": "oishi-orange-siam",
+    "name": "Oishi Orange tea",
+    "image": "https://secure.ap-tescoassets.com/assets/TH/289/8854698005289/ShotType1_540x540.jpg",
+    "price": "20",
+    "remaining": 100,
+    "total": 100,
+    "__v": 0
+  },
+  {
+    "_id": "604a11a852b70c3225c0141f",
+    "location": "siam",
+    "id": "oishi-yellow-siam",
+    "name": "Oishi Lemon tea",
+    "image": "https://secure.ap-tescoassets.com/assets/TH/669/8854698009669/ShotType1_540x540.jpg",
+    "price": "20",
+    "remaining": 10,
+    "total": 100,
+    "__v": 0
+  },
+  {
+    "_id": "604a158252b70c3225c01420",
+    "location": "siam",
+    "id": "smirnoff-vodka-siam",
+    "name": "Smirnoff vodka",
+    "image": "http://sc02.alicdn.com/kf/U71ba0a8558884dfba10a983d96755662J.jpg",
+    "price": "200",
+    "remaining": 0,
+    "total": 100,
+    "__v": 0
+  },
+  {
+    "_id": "604a15e952b70c3225c01421",
+    "location": "siam",
+    "id": "hong-thong-siam",
+    "name": "Hong Thong",
+    "image": "https://lh3.googleusercontent.com/proxy/A9XA2BuHKvOII45x8esQdbhnvSkdClRI4kAlTSv01Tg2elQ-mMwvNPTH4FnVmAWMVztXflHQXwtprJDfOe61oGaocBx-w-D-LHt8d0kucw",
+    "price": "170",
+    "remaining": 100,
+    "total": 100,
+    "__v": 0
+  }
+]
