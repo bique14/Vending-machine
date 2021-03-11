@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-yellow-100">
+  <div class="bg-yellow-100 relative">
     <h1 class="font-bold text-center text-2xl py-4">ADMIN</h1>
     <div class="flex flex-col">
       <div
@@ -21,11 +21,18 @@
               :key="item._id"
               class="list-none"
             >
-              <div class="flex flex-col">
+              <div class="flex flex-col border">
                 <img :src="item.image" class="rounded-t h-56 object-cover" />
                 <div class="border-t border-black px-2 py-1 bg-white">
                   <div class="flex justify-between text-xs">
                     <h1
+                      v-if="item.remaining < 10"
+                      class="font-bold text-red-500 text-lg inline whitespace-nowrap overflow-ellipsis overflow-hidden"
+                    >
+                      {{ item.name }}
+                    </h1>
+                    <h1
+                      v-else
                       class="font-bold text-lg inline whitespace-nowrap overflow-ellipsis overflow-hidden"
                     >
                       {{ item.name }}
@@ -87,6 +94,9 @@
 
 <script>
 export default {
+  head: {
+    title: "System Admin 🤓",
+  },
   data() {
     return { products: [], productsByLocation: {}, locations: [] };
   },
@@ -94,12 +104,26 @@ export default {
     const products = await this.fetchProducts();
     this.products = products;
     this.constructProducts();
+    this.notification();
   },
   methods: {
     async fetchProducts() {
       const resp = await fetch(`http://localhost:3001/admin`);
       const respJson = await resp.json();
       return respJson;
+    },
+    notification() {
+      this.locations.forEach((location) => {
+        this.productsByLocation.forEach((product) => {
+          product[location] &&
+            product[location].forEach((pd) => {
+              if (pd.remaining < 10) {
+                const { name, remaining } = pd;
+                alert(`${name} nearly out of stock! \n(${remaining} remain)`);
+              }
+            });
+        });
+      });
     },
     constructProducts() {
       const locations = [...new Set(this.products.map((p) => p.location))];

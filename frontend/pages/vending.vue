@@ -119,6 +119,9 @@
 import "@/assets/css/index.css";
 
 export default {
+  head: {
+    title: "Vending Machine 🥤",
+  },
   data() {
     return { location: "", coin: 15, products: [] };
   },
