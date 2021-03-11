@@ -11,7 +11,7 @@
         <div v-else class="flex bg-red-100 p-10 rounded-t-lg">
           <div class="grid grid-cols-4 gap-4 bg-white">
             <li
-              v-for="item in products"
+              v-for="item in products.sort((a, b) => a.price - b.price)"
               :key="item.id"
               class="list-none bg-white w-52"
             >
