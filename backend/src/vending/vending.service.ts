@@ -18,6 +18,10 @@ export class VendingService {
     return await this.vendingModel.find({ _id: id }).exec();
   }
 
+  async findByLocation(locationId): Promise<Vending[]> {
+    return await this.vendingModel.find({ location: locationId }).exec();
+  }
+
   async create(vending: VendingDto): Promise<Vending> {
     const craeteVending = new this.vendingModel(vending);
     console.log('created!', craeteVending);

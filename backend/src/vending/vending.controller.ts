@@ -18,9 +18,15 @@ export class VendingController {
   }
 
   @Get('vending')
-  getProduct(@Query() query) {
+  getProductById(@Query() query) {
     const { id } = query;
     return this.vendingService.findById(id);
+  }
+
+  @Get('vending')
+  getProductByLocation(@Query() query): Promise<Vending[]> {
+    const { location } = query;
+    return this.vendingService.findByLocation(location);
   }
 
   @Put('vending')
