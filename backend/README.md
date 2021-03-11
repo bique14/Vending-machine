@@ -60,7 +60,7 @@ url: `localhost:3001/admin`
     ]
 ```
 
-# Get product
+#### Get product
 
 url: `localhost:3001/vending?id=<product_id>`
 
