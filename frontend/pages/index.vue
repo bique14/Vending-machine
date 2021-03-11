@@ -1,5 +1,6 @@
 <template>
   <div>
+    Index.vue
     <span class="text-4xl">{{ count }}</span>
     <button class="border bg-red-200 p-4" @click="decreaseCount()">-</button>
     <button class="border bg-red-200 p-4" @click="increaseCount()">+</button>

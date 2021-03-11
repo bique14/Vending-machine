@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nuxt": "^2.15.2"
+    "nuxt": "^2.15.2",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^3.4.2",
