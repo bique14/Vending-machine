@@ -126,11 +126,11 @@ export default {
     const { location } = this.$route.query;
     this.location = location;
 
-    const products = await this.fetchProducts();
+    const products = await this.fetchProductsByLocation();
     this.products = products;
   },
   methods: {
-    async fetchProducts() {
+    async fetchProductsByLocation() {
       // Mock api https://designer.mocky.io/design/confirmation
       // "https://run.mocky.io/v3/c882e6dd-b1df-403e-842f-5acd84f115a8"
       const resp = await fetch(
